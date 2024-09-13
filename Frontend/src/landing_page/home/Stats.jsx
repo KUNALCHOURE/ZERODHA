@@ -4,7 +4,7 @@ import React from 'react'
 
 export default function Stats () {
     return ( 
-   <div className="container">
+   <div className="container mb-5">
     <div className="row p-3">
       <div className="col-6 mt-5 p-5">
          <h1 className='fs-2'>Trust with confidence</h1>
