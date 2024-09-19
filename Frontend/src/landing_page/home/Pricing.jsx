@@ -6,7 +6,7 @@ export default function Pricing () {
      <div className="container mt-5  p-5">
       <div className="row ">
         <div className="col-6 mr-5">
-          <h1 className='fs-2'> Unbeatable pricing</h1>
+          <h1 className='mb-3 fs-2'> Unbeatable pricing</h1>
           <p>We pioneered the concept of discount broking and price <br />
           transparency in India.Flat fees and no hidden charges.
           </p>
