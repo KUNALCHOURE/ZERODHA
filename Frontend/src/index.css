@@ -29,3 +29,9 @@
 .columns a{
     margin-top: 10px;
 }
+
+.between{
+    display: flex;
+    justify-content: space-between;
+}
+
