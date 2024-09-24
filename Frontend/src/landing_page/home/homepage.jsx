@@ -12,14 +12,14 @@ import Navbar from "../Navbar";
 export default function Homepage() {
     return ( 
 <>  
-<Navbar/> 
+
  <Hero/>
  <Award/>
  <Stats/>
  <Pricing/>
  <Education/>
 <Openaccount/>
-<Footer/>
+
 
 </>
     );

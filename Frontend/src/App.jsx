@@ -1,13 +1,23 @@
-
+import React from 'react'
+import { Route,Routes } from 'react-router-dom'
 import { useState } from 'react'
 import Homepage from './landing_page/home/homepage'
-
+import Navbar from './landing_page/Navbar'
+import Footer from './landing_page/Footer'
+import Notfound from './landing_page/notfount'
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <Homepage/>
+    <Navbar/>
+    <Routes>
+          <Route path="/" element={<Homepage/>}></Route> 
+          <Route path='/signup' element={<signup/>}></Route>
+          <Route path='/product'></Route>
+          <Route path='*'element={<Notfound/>}></Route>
+    </Routes>
+      <Footer/>
     </>
   )
 }
