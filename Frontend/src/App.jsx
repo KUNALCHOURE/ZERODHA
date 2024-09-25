@@ -6,6 +6,7 @@ import Navbar from './landing_page/Navbar'
 import Footer from './landing_page/Footer'
 import Notfound from './landing_page/notfount'
 import Aboutus from './landing_page/about/aboutpage'
+import Product from './landing_page/products/product'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -16,7 +17,7 @@ function App() {
           <Route path="/" element={<Homepage/>}></Route> 
           <Route path='/signup' element={<signup/>}></Route>
           <Route path='/Aboutus' element={<Aboutus/>}></Route>
-          <Route path='/product'></Route>
+          <Route path='/product' element={<Product/>} ></Route>
           <Route path='*'element={<Notfound/>}></Route>
     </Routes>
       <Footer/>

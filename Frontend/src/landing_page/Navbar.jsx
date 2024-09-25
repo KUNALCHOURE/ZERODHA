@@ -34,7 +34,7 @@ export default function Navbar() {
             <li>
               <Link
                 className="nav-link active"
-              to={""}
+              to={"/product"}
                 
               >
                 Products
