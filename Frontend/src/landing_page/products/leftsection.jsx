@@ -12,14 +12,15 @@ export default function Leftsection({imgurl,producname,proddesc,trydemo,learnmor
                     <h1>{producname}</h1>
                     <p>{proddesc}</p>
                     <div className="mb-4 ">
-                    <a href={trydemo} style={{marginRight:"50px"}} >Try demo <i class="fa-solid fa-arrow-right "></i></a>
-                     <a href={learnmore}>Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href={trydemo} style={{marginRight:"50px", textDecoration:"none"}} >Try demo <i class="fa-solid fa-arrow-right "></i></a>
+                     <a href={learnmore} style={{textDecoration:"none"}}>Learn More <i class="fa-solid fa-arrow-right"></i></a>
                      </div>
 
                      <div>
-                    <a href={googleplay} style={{marginRight:"50px"}}><img src="media/images/googlePlayBadge.svg" alt="" /></a>
-                    <a href={appstore}><img src="media/images/appstoreBadge.svg" alt="" /></a> 
+                    <a href={googleplay} style={{marginRight:"50px",textDecoration:"none"}}><img src="media/images/googlePlayBadge.svg" alt="" /></a>
+                    <a href={appstore} img src="media/images/appstoreBadge.svg" alt=""></a> 
                     </div>
+                    
                 </div>
             </div>
 
