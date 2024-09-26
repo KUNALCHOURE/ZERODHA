@@ -2,13 +2,13 @@ import React from "react";
 
 export default function Leftsection({imgurl,producname,proddesc,trydemo,learnmore,googleplay,appstore}){
     return (
-          <div className="container ">
+          <div className="container mb-5 p-5">
             <div className="row">
-                <div className="col-6 p-5">
+                <div className="col-7 text-center p-5">
                 <img src={imgurl} alt="" />
                 </div>
 
-                <div className="col-6 p-5">
+                <div className="col-4 p-5">
                     <h1>{producname}</h1>
                     <p>{proddesc}</p>
                     <div className="mb-4 ">
