@@ -35,3 +35,10 @@
     justify-content: space-between;
 }
 
+.universe div p {
+    color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.universe div img{
+    margin: 15px !important;
+}

@@ -2,6 +2,7 @@ import React from "react";
 import Hero from "./hero";
 import Leftsection from "./leftsection";
 import Rightsection from "./rightsection";
+import Universe from "./univers";
 
 export default function Product(){
     return(
@@ -14,7 +15,7 @@ export default function Product(){
          <Rightsection imgurl="media/images/kiteconnect.png" producname="Kite Connect Api" proddesc="Build powerful trading platforms and experiences with our super simple HTTP/JSON APIs. If you are a startup, build your investment app and showcase it to our clientbase." link="/kiteconnect" linkfront="Kite Connect" />
          <Leftsection imgurl="media/images/varsity.png" producname="Varsity mobile" proddesc="An easy to grasp, collection of stock market lessons with in-depth coverage and illustrations. Content is broken down into bite-size cards to help you learn on the go."  trydemo="/dasgboard" learnmore="/learnmore"googleplay="media/images/googleplayBadge.svg"appstore="appstoreBadge.svg"/>
 
-         
+         <Universe/>
          </>
     )
 }
