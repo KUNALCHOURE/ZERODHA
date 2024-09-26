@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 
 export default function Navbar() {
     return ( 
-      <nav className="navbar navbar-expand-lg " style={{backgroundClip:"#ffff"}}>
-      <div className="container p-2">
+      <nav className="navbar navbar-expand-lg border-bottom shadow-sm" style={{backgroundClip:"#ffff"}}>
+      <div className="container p-2  ">
         <Link className="navbar-brand ml-5" to="/">
           <img src="media/images/logo.svg" alt=""  style={{width:"25%"}}/>
         </Link>
