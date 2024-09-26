@@ -7,6 +7,7 @@ import Footer from './landing_page/Footer'
 import Notfound from './landing_page/notfount'
 import Aboutus from './landing_page/about/aboutpage'
 import Product from './landing_page/products/product'
+import Pricing from './landing_page/pricing/pricing'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -18,6 +19,7 @@ function App() {
           <Route path='/signup' element={<signup/>}></Route>
           <Route path='/Aboutus' element={<Aboutus/>}></Route>
           <Route path='/product' element={<Product/>} ></Route>
+          <Route path='/pricing' element={<Pricing/>} ></Route>
           <Route path='*'element={<Notfound/>}></Route>
     </Routes>
       <Footer/>

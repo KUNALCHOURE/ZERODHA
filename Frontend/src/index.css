@@ -37,6 +37,7 @@
 
 .universe div p {
     color: rgba(0, 0, 0, 0.5) !important;
+    font-size: smaller !important;
 }
 
 .universe div img{

@@ -41,7 +41,7 @@ export default function Navbar() {
               </Link>
               </li>
                 <li>
-                 <Link className="nav-link active" to={""}>
+                 <Link className="nav-link active" to={"/pricing"}>
                    Pricing
                  </Link>
                 </li>
