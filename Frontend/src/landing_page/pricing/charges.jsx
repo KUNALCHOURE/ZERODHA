@@ -57,7 +57,29 @@ export default function Charges(){
              </div>
 
              <div className="col-6">
+             <h6 className="m-3 text-muted">GST</h6>
+                  <p className="m-3" style={{fontSize:"smaller"}}>Tax levied by the government on the services rendered. 18% of ( brokerage + SEBI charges + transaction charges)</p>
 
+                  <h6 className="m-3 text-muted">DP (Depository participant) charges</h6>
+                  <p className="m-3" style={{fontSize:"smaller"}}>₹13 + GST per scrip (irrespective of quantity), on the day, is debited from the trading account when stocks are sold. This is charged by the depository (CDSL) and depository participant (Zerodha).</p>
+                  <p className="m-3" style={{fontSize:"smaller"}}>Female demat account holders (as first holder) will enjoy a discount of ₹0.25 per transaction.</p>
+                  <p className="m-3 " style={{fontSize:"smaller"}}>Debit transactions of mutual funds & bonds get an additional discount of ₹0.25.</p>
+
+                  <h6 className="m-3 text-muted">Pledging charges</h6>
+                  <p className="m-3" style={{fontSize:"smaller"}}>₹30 + GST per pledge request per ISIN.</p>
+
+                  <h6 className="m-3 text-muted">AMC (Account maintenance charges)</h6>
+                  <p className="m-3" style={{fontSize:"smaller"}}>For BSDA demat account: Zero charges if the holding value is less than ₹4,00,000. To learn more about BSDA, <a href="" className="text-decoration-none">Click here</a></p>
+                  <p className="m-3 " style={{fontSize:"smaller"}}>For non-BSDA demat accounts: ₹300/year + 18% GST charged quarterly (90 days). To learn more about AMC,<a href=""> Click here</a></p>
+             
+
+                  <h6 className="m-3 text-muted">AMC (Account maintenance charges)</h6>
+                  <p className="m-3" style={{fontSize:"smaller"}}>For BSDA demat account: Zero charges if the holding value is less than ₹4,00,000. To learn more about BSDA, <a href="" className="text-decoration-none">Click here</a></p>
+                  <p className="m-3 " style={{fontSize:"smaller"}}>For non-BSDA demat accounts: ₹300/year + 18% GST charged quarterly (90 days). To learn more about AMC,<a href=""> Click here</a></p>
+             
+
+
+             
              </div>
             </div>
         </div>
