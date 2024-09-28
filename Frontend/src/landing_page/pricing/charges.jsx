@@ -2,9 +2,9 @@ import React from "react";
 
 export default function Charges(){
     return(
-        <div className="container">
-            <div className="row">
-            <h2>Charges explained</h2>
+        <div className="container p-5">
+            <div className="row p-5">
+            <h3 className="text-muted mb-5">Charges explained</h3>
              <div className="col-6">
                   <h6 className="m-3 text-muted">Securities/Commodities transaction tax</h6>
                   <p className="m-3" style={{fontSize:"smaller"}}>Tax by the government when transacting on the exchanges. Charged as above on both buy and sell sides when trading equity delivery. Charged only on selling side when trading intraday or on F&O.</p>
@@ -70,18 +70,26 @@ export default function Charges(){
 
                   <h6 className="m-3 text-muted">AMC (Account maintenance charges)</h6>
                   <p className="m-3" style={{fontSize:"smaller"}}>For BSDA demat account: Zero charges if the holding value is less than ₹4,00,000. To learn more about BSDA, <a href="" className="text-decoration-none">Click here</a></p>
-                  <p className="m-3 " style={{fontSize:"smaller"}}>For non-BSDA demat accounts: ₹300/year + 18% GST charged quarterly (90 days). To learn more about AMC,<a href=""> Click here</a></p>
+                  <p className="m-3 " style={{fontSize:"smaller"}}>For non-BSDA demat accounts: ₹300/year + 18% GST charged quarterly (90 days). To learn more about AMC,<a href="" className="text-decoration-none"> Click here</a></p>
              
 
                   <h6 className="m-3 text-muted">AMC (Account maintenance charges)</h6>
                   <p className="m-3" style={{fontSize:"smaller"}}>For BSDA demat account: Zero charges if the holding value is less than ₹4,00,000. To learn more about BSDA, <a href="" className="text-decoration-none">Click here</a></p>
-                  <p className="m-3 " style={{fontSize:"smaller"}}>For non-BSDA demat accounts: ₹300/year + 18% GST charged quarterly (90 days). To learn more about AMC,<a href=""> Click here</a></p>
+                  <p className="m-3 " style={{fontSize:"smaller"}}>For non-BSDA demat accounts: ₹300/year + 18% GST charged quarterly (90 days). To learn more about AMC,<a href="" className="text-decoration-none"> Click here</a></p>
              
-
+                 
 
              
              </div>
+             <h6 className="m-3 text-muted">Disclaimer</h6>
+             <p className="m-3" style={{fontSize:"smaller"}}>For Delivery based trades, a minimum of ₹0.01 will be charged per contract note. Clients who opt to receive physical contract notes will be charged ₹20 per contract note plus courier charges. Brokerage will not exceed the rates specified by SEBI and the exchanges. All statutory and regulatory charges will be levied at actuals. Brokerage is also charged on expired, exercised, and assigned options contracts. Free investments are available only for our retail individual clients. Companies, Partnerships, Trusts, and HUFs need to pay 0.1% or ₹20 (whichever is less) as delivery brokerage. A brokerage of 0.25% of the contract value will be charged for contracts where physical delivery happens. For netted off positions in physically settled contracts, a brokerage of 0.1% will be charged.</p>
+
             </div>
+
+      
+           
+                
+          
         </div>
     )
 }
