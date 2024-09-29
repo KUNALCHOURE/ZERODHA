@@ -12,13 +12,13 @@ export default function Signup(){
                      <h3 className="text-muted mb-3">Signup now</h3>
                      <p className="text-muted mb-4">Or track your existing application</p>
                      <div >
-                      <input type="text" />
+                      <input type="text" className="border rounded-2" />
                     </div>
                      
 
                      <p className="text-muted" style={{fontSize:"smaller"}}>You will recieve an OTP on your number </p>
 
-                     <button className="btn btn-primary mb-2">Continue</button>
+                     <button className="btn btn-primary mb-2 ">Continue</button>
                      <br />
 
                      <a href="" className="text-decoration-none">Want to open an NRI account?</a>
