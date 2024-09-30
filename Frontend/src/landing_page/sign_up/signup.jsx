@@ -11,6 +11,7 @@ export default function Signup(){
                 <div className="col-4 mt-1">
                      <h3 className="text-muted mb-3">Signup now</h3>
                      <p className="text-muted mb-4">Or track your existing application</p>
+                     <form action="">
                      <div >
                       <input type="text" className="border rounded-2" />
                     </div>
@@ -19,6 +20,7 @@ export default function Signup(){
                      <p className="text-muted" style={{fontSize:"smaller"}}>You will recieve an OTP on your number </p>
 
                      <button className="btn btn-primary mb-2 ">Continue</button>
+                     </form>
                      <br />
 
                      <a href="" className="text-decoration-none">Want to open an NRI account?</a>
