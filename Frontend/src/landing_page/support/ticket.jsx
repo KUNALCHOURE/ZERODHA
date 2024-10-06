@@ -5,7 +5,7 @@ export default function Ticket() {
     <div className="support text-white" style={{ backgroundColor: "#387ed1" }}>
       <div className="container p-5">
         <div className="row p-5">
-          {/* Main Div for Support Panel and Track Ticket */}
+        
           <div className="row d-flex justify-content-between  mb-5">
             <div className=" col-4 fs-5"><h3>Support Portal</h3></div>
             <div className=" col-4 fs-5 ticket text-end">
