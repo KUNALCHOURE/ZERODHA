@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Openaccount(){
     return (
-        <div className='container p-5'>
+        <div className='container p-5 '>
         <div className="row text-center">
          
           <h1 className='mt-5 '>Open a Zerodha account</h1>

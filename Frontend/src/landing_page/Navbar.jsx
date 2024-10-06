@@ -48,7 +48,7 @@ export default function Navbar() {
         
            
             <li className="nav-item">
-              <Link className="nav-link active " >
+              <Link className="nav-link active "  to={"/support"}>
                 Support 
               </Link>
             </li>

@@ -9,6 +9,7 @@ import Aboutus from './landing_page/about/aboutpage'
 import Product from './landing_page/products/product'
 import Pricing from './landing_page/pricing/pricing'
 import Signup from './landing_page/sign_up/signup'
+import Support from './landing_page/support/support'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -21,6 +22,8 @@ function App() {
           <Route path='/product' element={<Product/>} ></Route>
           <Route path='/pricing' element={<Pricing/>} ></Route>
           <Route path='/signup' element={<Signup/>} ></Route>
+          <Route path='/support' element={<Support/>} ></Route>
+
           <Route path='*'element={<Notfound/>}></Route>
     </Routes>
       <Footer/>
