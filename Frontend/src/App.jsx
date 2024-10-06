@@ -1,6 +1,7 @@
 import React from 'react'
 import { Route,Routes } from 'react-router-dom'
 import { useState } from 'react'
+
 import Homepage from './landing_page/home/homepage'
 import Navbar from './landing_page/Navbar'
 import Footer from './landing_page/Footer'
