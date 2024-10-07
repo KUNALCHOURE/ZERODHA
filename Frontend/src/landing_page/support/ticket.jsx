@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Ticket() {
   return (
-    <div className="support text-white" style={{ backgroundColor: "#387ed1" }}>
+    <div className="support text-white " style={{ backgroundColor: "#387ed1" }}>
       <div className="container p-5">
         <div className="row p-5">
         

@@ -58,3 +58,12 @@
    margin-right: 15px;
    
 }
+.account a {
+    text-decoration:none;
+ 
+}
+
+.tickets a{
+    text-decoration: none;
+    line-height: 2 !important;
+}
