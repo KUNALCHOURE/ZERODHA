@@ -1,13 +1,16 @@
 import React from "react";
-
+import { BrowserRouter } from "react-router-dom";
 import Dashboard from "./Dashboard";
-import TopBar from "./TopBar";
+import TopBar from "./topBar";
 
 const Home = () => {
   return (
     <>
-      <TopBar />
+       <BrowserRouter>
+             <TopBar />
       <Dashboard />
+      </BrowserRouter>
+
     </>
   );
 };
