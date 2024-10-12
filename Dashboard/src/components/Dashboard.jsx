@@ -23,7 +23,7 @@ export default function Dashboard(){
           <Route exact path="/" element={<Summary />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/holdings" element={<Holdings />} />
-          <Route path="/positions" element={<Positions />} />
+          <Route path="/Position" element={<Positions />} />
           <Route path="/funds" element={<Funds />} />
           <Route path="/apps" element={<Apps />} />
         </Routes>
