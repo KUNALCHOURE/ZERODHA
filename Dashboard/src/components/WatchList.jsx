@@ -64,47 +64,50 @@ const Watchlistactions=({uid})=>{
   return (
     <span>
     <span>
-      <button className="buy"></button>
+    
       <Tooltip  title="BUY (B)"
       placement="top"
       arrow 
       TransitionComponent={Grow}
-      className="buy">Buy
+      className="buy">
+          <button className="buy">Buy</button>
       </Tooltip>
     </span>
 
     <span>
-      <button className="sell">Sell</button>
+     
     <Tooltip  title="Sell (s_"
     placement="top"
     arrow 
     TransitionComponent={Grow}
-    className="sell">Sell
+    className="sell"> 
+    <button className="sell">Sell</button>
+
     </Tooltip>
   </span>
 
   <span>
-    <button className="chart">Analytics</button>
     <Tooltip  title="Analytics (A)"
     placement="top"
     arrow 
     TransitionComponent={Grow}
     className="chart">
+    <button className="chart">Analytics</button>
+
     </Tooltip>
   </span>
 
 
   <span>
-    <button className="more">More</button>
     <Tooltip  title="MORE (B)"
     placement="top"
     arrow 
     TransitionComponent={Grow}
-    className="">More
+    className="">
+    <button className="more">More</button>
+
     </Tooltip>
   </span>
-
-
   
 
   </span>
