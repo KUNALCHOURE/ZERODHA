@@ -1,6 +1,6 @@
 const express= require("express");
 const mongoose= require("mongoose");
-
+const holdingmodel=require("./models/holdingmodel")
 //const { holdingmodel } = require("./models/holdingmodel");
 const app=express();
 const port=process.env.PORT||3030;
@@ -12,7 +12,7 @@ const url=process.env.MONGO_URL;
 
 
 
-app.get("/addholding ",(req,res)=>{
+app.get("/addholding",(req,res)=>{
     let tempholding=[
     
             {
@@ -146,7 +146,9 @@ res.send("data saved");
 });
 
 
-
+app.get("/",(req,res)=>{
+  res.send("hello");
+})
 
 
 app.listen(port,()=>{
