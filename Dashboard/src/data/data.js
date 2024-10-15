@@ -166,6 +166,8 @@ export const watchlist = [
       net: "+18.08%",
       day: "+0.32%",
     },
+
+   
   ];
   
   // positions
