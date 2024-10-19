@@ -213,6 +213,12 @@ app.get("/allpositions",async(req,res)=>{
  
 })
 
+
+app.get("/allorders",async(req,res)=>{
+  let allorders=await Ordersmodel.find();
+  res.json(allorders);
+ 
+})
 app.post("/neworder",async(req,res)=>{
     let {name,qty,price,mode}= req.body;
     console.log(name)
