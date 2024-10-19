@@ -4,4 +4,4 @@ const Orderschema=require("../schema/orderschema");
 
 const Ordersmodel=new model("orders",Orderschema);
 
-module.exports={Ordersmodel};
+module.exports=Ordersmodel;

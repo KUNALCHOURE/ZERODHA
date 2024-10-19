@@ -145,7 +145,7 @@ res.send("data saved");
 
 });*/
 
-
+/*
 app.get("/addPositions",async(req,res)=>{
   let temppositon= [
     {
@@ -180,7 +180,9 @@ app.get("/addPositions",async(req,res)=>{
       net: item.net,
       day:item.day,
       isLoss:item.isLoss,
+      
     })
+
     newpositon.save();
   })
 
@@ -188,7 +190,7 @@ app.get("/addPositions",async(req,res)=>{
   
 })
 
-
+*/
 app.get("/",(req,res)=>{
   res.send("hello");
 })
