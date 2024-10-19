@@ -384,9 +384,10 @@ hr {
   margin-bottom: 2%;
 }
 
-.order-table table {
-  width: 100%;
-  border-collapse: collapse;
+.order-table  {
+  width:90%;
+  border-collapse:collapse;
+  border: 1px solid rgb(211, 211, 211);
 }
 
 .order-table tr {
