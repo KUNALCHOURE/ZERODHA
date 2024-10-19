@@ -1,14 +1,20 @@
 const express= require("express");
 const mongoose= require("mongoose");
 const holdingmodel=require("./models/holdingmodel")
+const Ordersmodel =require("./models/ordersmodel")
 //const { holdingmodel } = require("./models/holdingmodel");
 const app=express();
 const port=process.env.PORT||3030;
 require('dotenv').config();
-const positionmodel=require("./models/positionmodel")
+const positionmodel=require("./models/positionmodel");
 // TO GET MONGO URL FROM .ENV
-
 const url=process.env.MONGO_URL;
+const bodyparser=require("body-parser");
+const cors=require("cors");
+
+
+app.use(cors());
+app.use(bodyparser.json());
 
 
 /*
@@ -195,6 +201,31 @@ app.get("/",(req,res)=>{
   res.send("hello");
 })
 
+app.get("/allholdings",async(req,res)=>{
+  let allholdings=await holdingmodel.find();
+  res.json(allholdings);
+ 
+})
+
+app.get("/allpositions",async(req,res)=>{
+  let allpositions=await positionmodel.find();
+  res.json(allpositions);
+ 
+})
+
+app.post("/neworder",async(req,res)=>{
+    let {name,qty,price,mode}= req.body;
+    console.log(name)
+    let neworder=new Ordersmodel({
+      name:name,
+      qty:qty,
+      price:price,
+      mode:mode,
+    })
+
+    await neworder.save();
+    res.send("Order saved");
+})
 
 app.listen(port,()=>{
     console.log("listning");  

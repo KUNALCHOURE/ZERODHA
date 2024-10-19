@@ -4,7 +4,7 @@ const Orderschema=new Schema({
     name:String,
     qty:Number,
     price:Number,
-    model:String,
+    mode:String,
 });
 
-module.exports={Orderschema};
+module.exports=Orderschema;

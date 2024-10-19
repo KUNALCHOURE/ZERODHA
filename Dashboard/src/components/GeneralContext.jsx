@@ -1,18 +1,37 @@
-import React, { createContext, useState } from "react";
+import React, { useState } from "react";
 
-// Create the context
-const GeneralContext = createContext();
+import BuyActionWindow from "./BuyActionWindow";
 
-// Create the provider component
-const GeneralContextProvider = ({ children }) => {
-  // Define the shared state and any other functionality
-  const [sharedState, setSharedState] = useState("Initial Value");
+const GeneralContext = React.createContext({
+  openBuyWindow: (uid) => {},
+  closeBuyWindow: () => {},
+});
+
+export const GeneralContextProvider = (props) => {
+  const [isBuyWindowOpen, setIsBuyWindowOpen] = useState(false);
+  const [selectedStockUID, setSelectedStockUID] = useState("");
+
+  const handleOpenBuyWindow = (uid) => {
+    setIsBuyWindowOpen(true);
+    setSelectedStockUID(uid);
+  };
+
+  const handleCloseBuyWindow = () => {
+    setIsBuyWindowOpen(false);
+    setSelectedStockUID("");
+  };
 
   return (
-    <GeneralContext.Provider value={{ sharedState, setSharedState }}>
-      {children}
+    <GeneralContext.Provider
+      value={{
+        openBuyWindow: handleOpenBuyWindow,
+        closeBuyWindow: handleCloseBuyWindow,
+      }}
+    >
+      {props.children}
+      {isBuyWindowOpen && <BuyActionWindow uid={selectedStockUID} />}
     </GeneralContext.Provider>
   );
 };
 
-export { GeneralContextProvider, GeneralContext };
+export default GeneralContext;
