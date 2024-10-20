@@ -13,11 +13,15 @@ export default function Signup(){
                      <p className="text-muted mb-4">Or track your existing application</p>
                      <form action="">
                      <div >
-                      <input type="text" className="border rounded-2" />
+                      <input type="email" className="border rounded-2" placeholder="Enter Email"  style={{width:'300px' ,height:'40px'}}/>
+
                     </div>
+                    <div>
+                    <input type="text" name="" id=""  className="border rounded-2 mt-3 mb-4"  placeholder="Enter password"  style={{width:'300px',height:'40px'}}/>
+                      </div>
                      
 
-                     <p className="text-muted" style={{fontSize:"smaller"}}>You will recieve an OTP on your number </p>
+                  
 
                      <button className="btn btn-primary mb-2 ">Continue</button>
                      </form>
