@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import axios from "axios";
+import VerticalBarChart from "./verticalbargraph";
 
 export default function Holdings() {
   const[holdings,setholdings]=useState([]);
@@ -11,6 +12,23 @@ export default function Holdings() {
    
 
   },[])
+  const labels=holdings.map((subarray)=>{
+     return subarray["name"]
+  })
+  ;
+
+  const data = {
+   labels,
+  datasets: [
+      {
+        label: 'Stock Price',
+        data: holdings.map((stock)=>stock.price),
+        backgroundColor: 'rgb(247, 69, 69)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1,
+      },
+    ],
+  };
   return (
     <>
       <h3 className="title">Holdings ({holdings.length})</h3>
@@ -76,6 +94,7 @@ export default function Holdings() {
           <p>P&L</p>
         </div>
       </div>
+      <VerticalBarChart data={data}/>
     </>
   );
 }
