@@ -2,6 +2,9 @@ const express= require("express");
 const mongoose= require("mongoose");
 const holdingmodel=require("./models/holdingmodel")
 const Ordersmodel =require("./models/ordersmodel")
+const cookieParser = require('cookie-parser');
+const bcrypt = require('bcrypt');
+
 //const { holdingmodel } = require("./models/holdingmodel");
 const app=express();
 const port=process.env.PORT||3030;
@@ -11,11 +14,14 @@ const positionmodel=require("./models/positionmodel");
 const url=process.env.MONGO_URL;
 const bodyparser=require("body-parser");
 const cors=require("cors");
+const user=require("./models/usermodel")
+const { createSecretToken } =require("./utils/secrettoken.js")
 
 
-app.use(cors());
 app.use(bodyparser.json());
-
+app.use(express.json()); // Parse incoming JSON requests
+app.use(cookieParser()); // For handling cookies
+app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 
 /*
 app.get("/addholding",(req,res)=>{
@@ -232,6 +238,56 @@ app.post("/neworder",async(req,res)=>{
     await neworder.save();
     res.send("Order saved");
 })
+
+app.post("/signupuser",async(req,res)=>{
+  try{
+    const{email,password,username}=req.body;
+
+    const extiguishuser=await user.findOne({email});
+
+    if(extiguishuser){
+      return res.status(400).json({message:"User already exist"});
+
+    }
+    const newuser=new user({
+     username,
+     email,
+     password,
+    });
+
+    await newuser.save();
+   
+
+    const token =createSecretToken(newuser._id);
+
+    // Set the token in a cookie
+    res.cookie("token", token, {
+      withCredentials: true,
+      httpOnly: true,
+    });
+
+    // Send response
+    res.status(201).json({
+      message: "User signed up successfully",
+      success: true,
+      user: {
+        id: newuser._id,
+        username: newuser.username,
+        email: newuser.email,
+      },
+    });
+ 
+  }
+  catch(e){
+    console.error(e);
+    res.status(500).json({message:"Signup failed",e});
+
+  }
+
+  console.log("User signed up ");
+   
+
+});
 
 app.listen(port,()=>{
     console.log("listning");  

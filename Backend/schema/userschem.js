@@ -1,5 +1,5 @@
-
-const Schema=require("mongoose");
+const bcrypt = require('bcrypt');
+const {Schema}=require("mongoose");
 
 const userschema=new Schema({
     email:{
