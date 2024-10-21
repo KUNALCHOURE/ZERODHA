@@ -12,12 +12,17 @@ export default function Signup(){
                      <h3 className="text-muted mb-3">Signup now</h3>
                      <p className="text-muted mb-4">Or track your existing application</p>
                      <form action="">
+
+                     <div >
+                      <input type="text" className="border rounded-2 mb-3" placeholder="Enter Username"  style={{width:'300px' ,height:'40px'}}/>
+
+                    </div>
                      <div >
                       <input type="email" className="border rounded-2" placeholder="Enter Email"  style={{width:'300px' ,height:'40px'}}/>
 
                     </div>
                     <div>
-                    <input type="text" name="" id=""  className="border rounded-2 mt-3 mb-4"  placeholder="Enter password"  style={{width:'300px',height:'40px'}}/>
+                    <input type="password" name="" id=""  className="border rounded-2 mt-3 mb-4"  placeholder="Enter password"  style={{width:'300px',height:'40px'}}/>
                       </div>
                      
 
