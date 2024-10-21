@@ -21,8 +21,25 @@ const { createSecretToken } =require("./utils/secrettoken.js")
 app.use(bodyparser.json());
 app.use(express.json()); // Parse incoming JSON requests
 app.use(cookieParser()); // For handling cookies
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
-app.use(cors({ origin: "http://localhost:5174", credentials: true }));
+
+
+// Allowed origins
+const allowedOrigins = ["http://localhost:5173", "http://localhost:5174"];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    // Allow requests with no origin, like mobile apps or curl requests
+    if (!origin) return callback(null, true);
+
+    if (allowedOrigins.indexOf(origin) === -1) {
+      const msg = "The CORS policy for this site does not allow access from the specified origin.";
+      return callback(new Error(msg), false);
+    }
+
+    return callback(null, true);
+  },
+  credentials: true
+}));
 
 /*
 app.get("/addholding",(req,res)=>{
@@ -289,6 +306,40 @@ app.post("/signupuser",async(req,res)=>{
    
 
 });
+
+app.post("/loginuser",async(req,res,next)=>{
+
+  try{
+    const{email,password}=req.body;
+    if(!email || !password ){
+      return res.json({message:'All fields are required'})
+    }
+
+
+    const usern = await user.findOne({ email });
+    if(!usern){
+      return res.json({message:'Incorrect password or email' }) 
+    }
+    const auth = await bcrypt.compare(password,usern.password)
+    if (!auth) {
+      return res.json({message:'Incorrect password or email' }) 
+    }
+
+    
+  const token = createSecretToken(user._id);
+  res.cookie("token", token, {
+    withCredentials: true,
+    httpOnly: false,
+  });
+  res.status(201).json({ message: "User logged in successfully", success: true });
+  next()
+  }
+
+  catch(e){
+    console.error(e);
+    res.status(500).json({message:"login failed",e});
+  }
+})
 
 app.listen(port,()=>{
     console.log("listning");  
