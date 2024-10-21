@@ -20,17 +20,16 @@ export default function Signup() {
           password,
         }),
       });
-
-      const data = await response.json();
-
-      if (data.success) {
-        setMessage("Signup successful!");
+      if (response.ok) {
+        // If signup is successful, redirect to the dashboard
+        window.location.href = "http://localhost:5174/"; // Replace PORT with your dashboard's port number
       } else {
-        setMessage(data.message || "Signup failed");
+        // Handle errors (e.g., display error messages)
+        const errorData = await response.json();
+        console.error("Error:", errorData);
       }
     } catch (error) {
-      console.error("Error during signup:", error);
-      setMessage("Something went wrong!");
+      console.error("Error:", error);
     }
   };
 

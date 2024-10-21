@@ -22,6 +22,7 @@ app.use(bodyparser.json());
 app.use(express.json()); // Parse incoming JSON requests
 app.use(cookieParser()); // For handling cookies
 app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+app.use(cors({ origin: "http://localhost:5174", credentials: true }));
 
 /*
 app.get("/addholding",(req,res)=>{
