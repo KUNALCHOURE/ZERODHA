@@ -243,19 +243,55 @@ app.get("/allorders",async(req,res)=>{
   res.json(allorders);
  
 })
-app.post("/neworder",async(req,res)=>{
-    let {name,qty,price,mode}= req.body;
-    console.log(name)
-    let neworder=new Ordersmodel({
-      name:name,
-      qty:qty,
-      price:price,
-      mode:mode,
-    })
+
+app.post("/neworder", async (req, res) => {
+  try {
+    let { name, qty, price, mode } = req.body;
+    console.log(name);
+
+    // Create and save a new order
+    let neworder = new Ordersmodel({
+      name: name,
+      qty: qty,
+      price: price,
+      mode: mode,
+    });
 
     await neworder.save();
-    res.send("Order saved");
-})
+
+    // Find the document in holdings by name using holdingmodel
+    let hold = await holdingmodel.findOne({ name: name });
+
+    if (hold) {
+      // Update the qty and avg if the holding exists
+      hold.qty += qty;  // Increment the quantity by the new qty
+      hold.avg = hold.price / hold.qty;  // Recalculate average price
+
+      // Save the updated hold back to the database
+      const result = await holdingmodel.updateOne(
+        { name: name }, // Filter by name
+        {
+          $set: {
+            qty: hold.qty,
+            avg: hold.avg,
+          }
+        }
+      );
+
+      console.log("Holdings updated:", result);
+    } else {
+      // If no holding found, handle it (optional)
+      console.log('No holding found for this name.');
+    }
+
+    // Send success response
+    res.send("Order saved and holdings updated");
+
+  } catch (err) {
+    console.error('Error processing new order:', err);
+    res.status(500).send("Error saving order");
+  }
+});
 
 app.post("/signupuser",async(req,res)=>{
   try{
