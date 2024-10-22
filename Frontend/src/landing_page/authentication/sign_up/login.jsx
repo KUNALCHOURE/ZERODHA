@@ -39,7 +39,7 @@ export default function Login() {
   return (
     <>
       <div className="container">
-        <div className="row m-5 p-5">
+        <div className="row mt-5 p-5">
           <div className="col-8 text-center">
             <img src="media/images/landing.png" alt="Landing" style={{ width: "70%" }} />
           </div>
