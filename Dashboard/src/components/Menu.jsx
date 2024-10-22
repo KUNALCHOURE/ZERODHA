@@ -1,16 +1,21 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Menu = () => {
   const [selectedmenu, setselectedmenu] = useState(0);
-   const username=localStorage.getItem("username");
+  const [username, setUsername] = useState("");
+  useEffect(() => {
+    // Get the username from the URL query parameters
+    const params = new URLSearchParams(window.location.search);
+    const user = params.get("username");
+    if (user) {
+      setUsername(user);
+    }
+  }, []);
 
-   if (username) {
-    // Use the username as needed
-    console.log("Username:", username);
-  } else {
-    console.log("No username found in localStorage");
-  }
+
+  
+
   const handlemenuclick = (index) => {
     setselectedmenu(index);
   };

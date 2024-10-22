@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 export default function Login() {
-  const [useremail, setUserEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [userpass, setUserPass] = useState("");
   const [message, setMessage] = useState(""); // New state to hold the login message
 
@@ -14,20 +14,16 @@ export default function Login() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          email: useremail,
+          username: username,
           password: userpass,
         }),
       });
 
       if (res.ok) {
-        // If login is successful, set a success message
-        const Data = await res.json();
-        const username=Data.username;
-        localStorage.setItem("username",username);
-        console.log("login"+username);
+      
         setMessage("Login successful! Redirecting to the dashboard...");
         setTimeout(() => {
-          window.location.href = "http://localhost:5174/"; // Replace with your actual dashboard URL
+          window.location.href = `http://localhost:5174/?username=${encodeURIComponent(username)}`;
         }, 2000); // Delay to allow user to see the message before redirection
       } else {
         // Handle errors (e.g., display error messages)
@@ -52,12 +48,12 @@ export default function Login() {
             <form onSubmit={handleLogin}>
               <div>
                 <input
-                  type="email"
+                  type="text"
                   className="border rounded-2 mt-3"
-                  placeholder="Enter Email"
+                  placeholder="Enter Username"
                   style={{ width: "300px", height: "40px" }}
-                  value={useremail}
-                  onChange={(e) => setUserEmail(e.target.value)}
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
                   required
                 />
               </div>

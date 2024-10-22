@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 
 export default function Signup() {
@@ -22,10 +23,15 @@ export default function Signup() {
       });
       if (response.ok) {
         // If signup is successful, redirect to the dashboard
-        window.location.href = "http://localhost:5174/"; // Replace PORT with your dashboard's port number
+        setTimeout(() => {
+          setMessage("Signup successful! Redirecting to the dashboard...");
+          window.location.href = `http://localhost:5174/?username=${encodeURIComponent(username)}` 
+        },2000);
+       // Replace PORT with your dashboard's port number
       } else {
         // Handle errors (e.g., display error messages)
         const errorData = await response.json();
+        setMessage(`Signup failed: ${errorData.message}`);
         console.error("Error:", errorData);
       }
     } catch (error) {
