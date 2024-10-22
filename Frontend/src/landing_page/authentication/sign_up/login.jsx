@@ -21,6 +21,10 @@ export default function Login() {
 
       if (res.ok) {
         // If login is successful, set a success message
+        const Data = await res.json();
+        const username=Data.username;
+        localStorage.setItem("username",username);
+        console.log("login"+username);
         setMessage("Login successful! Redirecting to the dashboard...");
         setTimeout(() => {
           window.location.href = "http://localhost:5174/"; // Replace with your actual dashboard URL

@@ -342,40 +342,40 @@ app.post("/signupuser",async(req,res)=>{
    
 
 });
-
-app.post("/loginuser",async(req,res,next)=>{
-
-  try{
-    const{email,password}=req.body;
-    if(!email || !password ){
-      return res.json({message:'All fields are required'})
+app.post("/loginuser", async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    if (!email || !password) {
+      return res.json({ message: 'All fields are required' });
     }
-
 
     const usern = await user.findOne({ email });
-    if(!usern){
-      return res.json({message:'Incorrect password or email' }) 
+    if (!usern) {
+      return res.json({ message: 'Incorrect password or email' });
     }
-    const auth = await bcrypt.compare(password,usern.password)
+
+    const auth = await bcrypt.compare(password, usern.password);
     if (!auth) {
-      return res.json({message:'Incorrect password or email' }) 
+      return res.json({ message: 'Incorrect password or email' });
     }
 
-    
-  const token = createSecretToken(user._id);
-  res.cookie("token", token, {
-    withCredentials: true,
-    httpOnly: false,
-  });
-  res.status(201).json({ message: "User logged in successfully", success: true });
-  next()
-  }
+    const username = usern.username;
+    console.log("index" + username);
 
-  catch(e){
+    const token = createSecretToken(usern._id);
+    res.cookie("token", token, {
+      withCredentials: true,
+      httpOnly: false,
+    });
+
+    // Send the response with username
+    res.status(201).json({ message: "User logged in successfully", success: true, username: username });
+  } catch (e) {
     console.error(e);
-    res.status(500).json({message:"login failed",e});
+    res.status(500).json({ message: "Login failed", error: e.message });
   }
-})
+});
+
 
 app.listen(port,()=>{
     console.log("listning");  

@@ -13,7 +13,7 @@ import Signup from './landing_page/authentication/sign_up/signup'
 import Support from './landing_page/support/support'
 import Login from './landing_page/authentication/sign_up/login'
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>

@@ -3,10 +3,18 @@ import { Link } from "react-router-dom";
 
 const Menu = () => {
   const [selectedmenu, setselectedmenu] = useState(0);
+   const username=localStorage.getItem("username");
 
+   if (username) {
+    // Use the username as needed
+    console.log("Username:", username);
+  } else {
+    console.log("No username found in localStorage");
+  }
   const handlemenuclick = (index) => {
     setselectedmenu(index);
   };
+
 
   const menuclass = "menu";
   const activemenuclass = "menu selected";
@@ -85,8 +93,19 @@ const Menu = () => {
         </ul>
         <hr />
         <div className="profile">
-          <div className="avatar">ZU</div>
-          <p className="username">USERID</p>
+        <div className="avatar">
+          {console.log("dashboard:"+username)}
+    {username && username.length > 0 
+        ? (username.length === 1 
+            ? username[0] // If the username is a single character
+            : username[0] + username[1]) // If the username is two or more characters
+        : "?" // Default character if username is null or empty
+    }
+</div>
+
+
+          <p className="username">{username}</p>
+
         </div>
       </div>
     </div>
