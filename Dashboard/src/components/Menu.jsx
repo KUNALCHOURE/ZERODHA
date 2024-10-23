@@ -1,9 +1,11 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Menu = () => {
-  const [selectedmenu, setselectedmenu] = useState(0);
+  const [selectedMenu, setSelectedMenu] = useState(0);
   const [username, setUsername] = useState("");
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
   useEffect(() => {
     // Get the username from the URL query parameters
     const params = new URLSearchParams(window.location.search);
@@ -13,16 +15,26 @@ const Menu = () => {
     }
   }, []);
 
-
-  
-
-  const handlemenuclick = (index) => {
-    setselectedmenu(index);
+  const handleMenuClick = (index) => {
+    setSelectedMenu(index);
   };
 
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
 
-  const menuclass = "menu";
-  const activemenuclass = "menu selected";
+  const handleProfileClick = () => {
+    console.log("Navigate to Profile");
+    // Add your profile navigation logic here
+  };
+
+  const handleLogoutClick = () => {
+    console.log("Logout");
+   window.location.href=("http://localhost:5173/login");
+  };
+
+  const menuClass = "menu";
+  const activeMenuClass = "menu selected";
 
   return (
     <div className="menu-container">
@@ -33,9 +45,9 @@ const Menu = () => {
             <Link
               style={{ textDecoration: "none" }}
               to={"/"}
-              onClick={() => handlemenuclick(0)}
+              onClick={() => handleMenuClick(0)}
             >
-              <p className={selectedmenu === 0 ? activemenuclass : menuclass}>
+              <p className={selectedMenu === 0 ? activeMenuClass : menuClass}>
                 Dashboard
               </p>
             </Link>
@@ -44,9 +56,9 @@ const Menu = () => {
             <Link
               style={{ textDecoration: "none" }}
               to={"/orders"}
-              onClick={() => handlemenuclick(1)}
+              onClick={() => handleMenuClick(1)}
             >
-              <p className={selectedmenu === 1 ? activemenuclass : menuclass}>
+              <p className={selectedMenu === 1 ? activeMenuClass : menuClass}>
                 Orders
               </p>
             </Link>
@@ -55,9 +67,9 @@ const Menu = () => {
             <Link
               style={{ textDecoration: "none" }}
               to={"/Holdings"}
-              onClick={() => handlemenuclick(2)}
+              onClick={() => handleMenuClick(2)}
             >
-              <p className={selectedmenu === 2 ? activemenuclass : menuclass}>
+              <p className={selectedMenu === 2 ? activeMenuClass : menuClass}>
                 Holdings
               </p>
             </Link>
@@ -66,9 +78,9 @@ const Menu = () => {
             <Link
               style={{ textDecoration: "none" }}
               to={"/Position"}
-              onClick={() => handlemenuclick(3)}
+              onClick={() => handleMenuClick(3)}
             >
-              <p className={selectedmenu === 3 ? activemenuclass : menuclass}>
+              <p className={selectedMenu === 3 ? activeMenuClass : menuClass}>
                 Positions
               </p>
             </Link>
@@ -77,9 +89,9 @@ const Menu = () => {
             <Link
               style={{ textDecoration: "none" }}
               to={"/Funds"}
-              onClick={() => handlemenuclick(4)}
+              onClick={() => handleMenuClick(4)}
             >
-              <p className={selectedmenu === 4 ? activemenuclass : menuclass}>
+              <p className={selectedMenu === 4 ? activeMenuClass : menuClass}>
                 Funds
               </p>
             </Link>
@@ -88,9 +100,9 @@ const Menu = () => {
             <Link
               style={{ textDecoration: "none" }}
               to={"/Actions"}
-              onClick={() => handlemenuclick(5)}
+              onClick={() => handleMenuClick(5)}
             >
-              <p className={selectedmenu === 5 ? activemenuclass : menuclass}>
+              <p className={selectedMenu === 5 ? activeMenuClass : menuClass}>
                 Actions
               </p>
             </Link>
@@ -98,19 +110,24 @@ const Menu = () => {
         </ul>
         <hr />
         <div className="profile">
-        <div className="avatar">
-          {console.log("dashboard:"+username)}
-    {username && username.length > 0 
-        ? (username.length === 1 
-            ? username[0] // If the username is a single character
-            : username[0] + username[1]) // If the username is two or more characters
-        : "?" // Default character if username is null or empty
-    }
-</div>
-
+          <div className="avatar" onClick={toggleDropdown}>
+            {console.log("dashboard:" + username)}
+            {username && username.length > 0
+              ? username.length === 1
+                ? username[0] // If the username is a single character
+                : username[0] + username[1] // If the username is two or more characters
+              : "?"}
+          </div>
 
           <p className="username">{username}</p>
 
+          {/* Dropdown for Profile and Logout */}
+          {isDropdownOpen && (
+            <div className="dropdown-menu">
+              <button onClick={handleProfileClick}>Profile</button>
+              <button onClick={handleLogoutClick}>Logout</button>
+            </div>
+          )}
         </div>
       </div>
     </div>

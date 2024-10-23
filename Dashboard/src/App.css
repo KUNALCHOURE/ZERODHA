@@ -842,3 +842,31 @@ hr {
 .action:hover {
   background-color: rgb(212, 212, 212);
 }
+
+
+.dropdown-menu {
+  position: absolute;
+  top: 50px; /* Adjust based on your design */
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  padding: 10px;
+  margin-right: 20px;
+}
+
+.dropdown-menu button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.dropdown-menu button:hover {
+  background-color: #f0f0f0;
+}
