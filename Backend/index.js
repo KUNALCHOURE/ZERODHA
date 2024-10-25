@@ -247,7 +247,10 @@ app.get("/allorders",async(req,res)=>{
 app.post("/neworder", async (req, res) => {
   try {
     let { name, qty, price, mode } = req.body;
+    qty=Number(qty);
+    price=Number(price);
     console.log(name);
+    console.log(typeof(qty));
 
     // Create and save a new order
     let neworder = new Ordersmodel({
@@ -263,10 +266,11 @@ app.post("/neworder", async (req, res) => {
     let hold = await holdingmodel.findOne({ name: name });
 
     if (hold) {
+      console.log(typeof(hold.qty));
       // Update the qty and avg if the holding exists
       hold.qty += qty;  // Increment the quantity by the new qty
       hold.avg = hold.price / hold.qty;  // Recalculate average price
-
+console.log(hold.qty);
       // Save the updated hold back to the database
       const result = await holdingmodel.updateOne(
         { name: name }, // Filter by name
