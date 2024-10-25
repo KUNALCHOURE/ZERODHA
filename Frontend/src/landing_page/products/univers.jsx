@@ -1,6 +1,10 @@
 import React from "react";
-
+import { useNavigate } from "react-router-dom";
 export default function Universe() {
+    const navigate=useNavigate();
+  const handleclick=()=>{
+      navigate("/signup")
+  }
     return (
         <div className="container p-5">
             <div className="row p-5 universe">
@@ -43,7 +47,7 @@ export default function Universe() {
             </div>
             
             <div className="text-center p-5">
-                <button className="btn btn-primary fs-5" style={{width:"200px",height:"50px",backgroundColor:"#387ed1"}}>Sign up for free</button>
+                <button className="btn btn-primary fs-5" style={{width:"200px",height:"50px",backgroundColor:"#387ed1"}} onClick={handleclick}>Sign up for free</button>
             </div>
         </div>
     );
