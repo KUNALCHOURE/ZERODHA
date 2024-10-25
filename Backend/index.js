@@ -380,9 +380,9 @@ app.post("/loginuser", async (req, res, next) => {
 
 
 
-app.listen(port,()=>{
+app.listen(port,async()=>{
     console.log("listning");  
-    mongoose.connect(url);
+   await mongoose.connect(url);
     console.log("db connected");
 })
 
