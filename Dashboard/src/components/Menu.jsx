@@ -96,17 +96,7 @@ const Menu = () => {
               </p>
             </Link>
           </li>
-          <li>
-            <Link
-              style={{ textDecoration: "none" }}
-              to={"/Actions"}
-              onClick={() => handleMenuClick(5)}
-            >
-              <p className={selectedMenu === 5 ? activeMenuClass : menuClass}>
-                Actions
-              </p>
-            </Link>
-          </li>
+        
         </ul>
         <hr />
         <div className="profile">
