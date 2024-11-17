@@ -115,12 +115,6 @@ npm run dev
 
 <br> <br>
 
-- **Dashboard**:
-  ![image](https://github.com/user-attachments/assets/6232c9a7-7e97-456a-ab1a-c4a215c2f0bf)
-
-
-<br> <br>
-
 - **Login Page**:
   ![image](https://github.com/user-attachments/assets/35512110-878e-4abc-a589-06a2b33bbc83)
 
@@ -129,4 +123,7 @@ npm run dev
 
 - **Sign Up Page**:
   ![image](https://github.com/user-attachments/assets/fb166a1c-fd0d-477f-bf26-87695861582b)
+
+- **Dashboard**:
+  ![image](https://github.com/user-attachments/assets/6232c9a7-7e97-456a-ab1a-c4a215c2f0bf)
 
