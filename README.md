@@ -53,7 +53,7 @@ npm install
 ### 3.Configure Environment Variables
 ``` bash
 MONGO_URL=<your-mongodb-connection-string>
-PORT=3030
+
 ```
 ### 4.Run the Backend Server
 ``` bash
@@ -76,6 +76,22 @@ cd ../frontend
 ``` bash
 npm run dev
 ```
+
+## Dashboard Srtucture
+
+### 1. Navigate to the Dashboard Directory
+```bash
+cd ../dashboard
+```
+### 2. Install Dashboard Dependencies
+``` bash
+npm install
+```
+### 3. Run the Dashboard Server
+``` bash
+npm run dev
+```
+
 ## Backend Structure
 
 - **Models:**
