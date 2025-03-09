@@ -1,6 +1,6 @@
 # Zerodha Clone
 
-Zerodha Clone is a web application that replicates the core functionalities of the Zerodha trading platform. It provides users with features like holding and position tracking, order management, and real-time data updates. The frontend is developed using React, while the backend is built with Node.js, Express, and MongoDB.
+Zerodha Clone is a web application that replicates the core functionalities of the Zerodha trading platform. It provides users with features like holding and position tracking, order management. The frontend is developed using React, while the backend is built with Node.js, Express, and MongoDB.
 
 ## Table of Contents
 - [Project Overview](#project-overview)
